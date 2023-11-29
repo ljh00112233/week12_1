@@ -24,12 +24,15 @@
 import React from "react";
 import styled from 'styled-components';
 const Circle = styled.div`
-  width: 5rem;
-  height: 5rem;
+  width: ${(props)=>props.radius}rem;
+  height: ${(props)=>props.radius}rem;
   background: ${(props)=>props.color || 'black'};
   border-radius: 50%;
 `;
 function App(){
-  return <Circle color="red"/>;
+  return <div>
+    <Circle color="red" radius={3}/>
+    <Circle color="blue" radius={5}/>
+  </div>
 }
 export default App;
